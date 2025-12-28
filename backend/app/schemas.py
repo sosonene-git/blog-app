@@ -9,6 +9,7 @@ class ArticleBase(BaseModel):
 
 class ArticleResponse(ArticleBase):
     id: int
+    user: str
     created_at: datetime
     updated_at: datetime
 

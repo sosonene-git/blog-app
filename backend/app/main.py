@@ -36,14 +36,14 @@ def get_articles(db: Session = Depends(get_db)):
 
 
 # 初期データ投入用（開発用）
-# Todo: あとで削除する
+# Todo: あとで
 @app.post("/articles/seed")
 def seed_articles(db: Session = Depends(get_db)):
     """サンプルデータを投入"""
     sample_articles = [
-        Article(title="はじめての記事", content="これは最初の記事の内容です。"),
-        Article(title="FastAPIについて", content="FastAPIは高速なPython Webフレームワークです。"),
-        Article(title="SQLAlchemyの使い方", content="SQLAlchemyはPythonのORMライブラリです。"),
+        Article(title="はじめての記事", content="これは最初の記事の内容です。", user="yamada"),
+        Article(title="FastAPIについて", content="FastAPIは高速なPython Webフレームワークです。", user="tanaka"),
+        Article(title="SQLAlchemyの使い方", content="SQLAlchemyはPythonのORMライブラリです。", user="sato"),
     ]
     db.add_all(sample_articles)
     db.commit()

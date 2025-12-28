@@ -49,9 +49,12 @@ export default function Home() {
             <li key={article.id} style={cardStyle}>
               <h2 style={{ margin: '0 0 10px 0' }}>{article.title}</h2>
               <p style={{ color: '#666', margin: '0 0 10px 0' }}>{article.content}</p>
-              <small style={{ color: '#999' }}>
-                作成日: {new Date(article.created_at).toLocaleDateString('ja-JP')}
-              </small>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px' }}>
+                <small style={{ color: '#999' }}>
+                  作成日: {new Date(article.created_at).toLocaleDateString('ja-JP')}
+                </small>
+                <small style={{ color: '#666' }}>作成者: {article.user}</small>
+              </div>
             </li>
           ))}
         </ul>
