@@ -27,7 +27,7 @@ def seed_db():
 
 seed_db()
 
-app = FastAPI()
+app = FastAPI(title="blog-api")
 
 # CORS設定（フロントエンドからのアクセス許可）
 app.add_middleware(
